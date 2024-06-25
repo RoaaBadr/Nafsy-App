@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from "../sections/Navbar.jsx";
 import { Link } from "react-router-dom";
 
-export default function Createbtn() {
+export default function CreateArticle() {
   const [image, setImage] = useState('');
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
@@ -67,9 +67,9 @@ export default function Createbtn() {
         <br />
         </form>
         <div className="create-article-btn">
-            <Link to={"/admin-profile"}><button className="create-article-btn-close" onClick={() => console.log('Modal closed')}>Close</button></Link>
+            <Link to={"/admin-profile"}><button className="create-btn-close" onClick={() => console.log('Modal closed')}>Close</button></Link>
         
-        <button className="create-article-btn-create" onClick={handleCreate}>Create</button>
+        <button className="create-btn-create" onClick={handleCreate}>Create</button>
         </div>
     </div>
     </>

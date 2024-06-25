@@ -221,7 +221,7 @@ export default function AdminProfile() {
                         </Table>
                       </TableContainer>
                       <div className="d-flex justify-content-end mb-2">
-                      <Link to={"/create-article"}>
+                      <Link to={"/create-video"}>
                         <button
                           type="button"
                           onClick={() => setShowModal(true)}

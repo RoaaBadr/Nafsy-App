@@ -824,7 +824,7 @@ input {
   background-color: #bb2e2e;
   color: white;
 }
-.create-article-container {
+.create-article-container, .create-video-container{
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
@@ -833,23 +833,23 @@ input {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.create-article-title {
+.create-article-title, .create-video-title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
-.create-article-form {
+.create-article-form, .create-video-form{
   display: flex;
   flex-direction: column;
   
 }
 
-.create-article-label {
+.create-article-label, .create-video-label {
   margin-bottom: 10px;
 }
 
-.create-article-input {
+.create-article-input, .create-video-input {
   width: 100%;
   height: 40px;
   padding: 5px;
@@ -857,18 +857,18 @@ input {
   border-radius: 5px;
 }
 
-.create-article-input:focus {
+.create-article-input, .create-video-input:focus {
   border-color: #aaa;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.create-article-error {
+.create-article-error, .create-video-error {
   color: red;
   font-size: 12px;
   margin-top: 5px;
 }
 
-.create-article-btn-close, .create-article-btn-create{
+.create-btn-close, .create-btn-create{
   width: 20%;
   height: 40px;
   border: none;
@@ -877,18 +877,18 @@ input {
   color: #fff;
   cursor: pointer;
 }
-.create-article-btn-create{
+.create-btn-create{
   float: right;
   background-color: #3f7630;
 
 }
-.create-article-btn-close{
+.create-btn-close{
   float: none;
   background-color: #807f7c;
 }
-.create-article-btn-create:hover {
+.create-btn-create:hover {
   background-color: #315328;
-}.create-article-btn-close:hover {
+}.create-btn-close:hover {
   background-color: #484745;
 }
 

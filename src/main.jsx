@@ -14,7 +14,9 @@ import FetchV from "./pages/VideoFetch.jsx";
 
 import Admin from "./pages/AdminProfile.jsx";
 import User from "./pages/UserProfile.jsx";
-import CreateBtn from "./pages/Createbtn.jsx";
+
+import CreateArticle from "./pages/CreateArticle.jsx";
+import CreateVideo from "./pages/CreateVideo.jsx";
 
 import { Signup } from "./components/Signup.jsx";
 import { Login } from "./components/Login.jsx";
@@ -37,7 +39,9 @@ function App() {
           <Route path="/log-in" element={<Login />} />
           <Route path="/blogs" element={<FetchA />} />
           <Route path="/video" element={<FetchV />} />
-          <Route path="/create-article" element={<CreateBtn />} />
+
+          <Route path="/create-article" element={<CreateArticle />} />
+          <Route path="/create-video" element={<CreateVideo />} />
 
           <Route path="/admin-profile" element={<Admin />} />
           <Route path="/user-profile" element={<User />} />
