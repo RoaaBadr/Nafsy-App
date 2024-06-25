@@ -800,3 +800,95 @@ input {
 .banner {
   margin: 5rem;
 }
+.create-new-btn{
+  background-color: white;
+  padding: 8px 29px;
+  border-radius: 12px;
+  border: #8B4513 2px solid;
+  color: #8B4513;
+  font-size: small;
+}
+.create-new-btn:hover {
+  background-color: #8B4513;
+  color: white;
+}
+.delete-btn{
+  background-color: white;
+  padding: 6px;
+  border-radius: 15px;
+  border: #bb2e2e 2px solid;
+  color: #bb2e2e;
+  font-size: small;
+}
+.delete-btn:hover{
+  background-color: #bb2e2e;
+  color: white;
+}
+.create-article-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-article-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.create-article-form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.create-article-label {
+  margin-bottom: 10px;
+}
+
+.create-article-input {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.create-article-input:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-article-error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.create-article-btn-close, .create-article-btn-create{
+  width: 20%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+
+  color: #fff;
+  cursor: pointer;
+}
+.create-article-btn-create{
+  float: right;
+  background-color: #3f7630;
+
+}
+.create-article-btn-close{
+  float: none;
+  background-color: #807f7c;
+}
+.create-article-btn-create:hover {
+  background-color: #315328;
+}.create-article-btn-close:hover {
+  background-color: #484745;
+}
+

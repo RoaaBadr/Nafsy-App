@@ -8,7 +8,7 @@ const questions = [
     id: 1,
     text: "Feeling nervous, anxious, or on edge",
     choices: [
-        { text: "Not at all", score: 0 },
+        { text: "..", score: 0 },
         { text: "Several days", score: 1 },
         { text: "More than half the days", score: 2 },
         { text: "Nearly every day", score: 3 },

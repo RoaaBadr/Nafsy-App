@@ -1,5 +1,15 @@
-import React from "react";
 import Navbar from "../sections/Navbar";
+import { Link } from "react-router-dom";
+import * as React from "react";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import AddIcon from '@mui/icons-material/Add';
+import DeleteIcon from '@mui/icons-material/Delete';
 import {
   MDBCol,
   MDBContainer,
@@ -11,6 +21,17 @@ import {
   MDBBtn,
 } from "mdb-react-ui-kit";
 
+function createData(name, id, btn) {
+  return { name, id, btn };
+}
+
+const rows = [
+  createData("Title 1", 1),
+  createData("Title 2", 2),
+  createData("Title 3", 3),
+  createData("Title 4", 4),
+  createData("Title 5", 5),
+];
 export default function AdminProfile() {
   return (
     <>
@@ -42,7 +63,7 @@ export default function AdminProfile() {
             </MDBCol>
             <MDBCol lg="8">
               <MDBCard className="mb-4">
-              <MDBCol className="d-flex justify-content-center mb-2 my-5">
+                <MDBCol className="d-flex justify-content-center mb-2 my-5">
                   <MDBCardText>User Information</MDBCardText>
                 </MDBCol>
                 <MDBCardBody>
@@ -90,48 +111,127 @@ export default function AdminProfile() {
                 </MDBCardBody>
               </MDBCard>
               <MDBCard className="mb-4">
-              <MDBCol className="d-flex justify-content-center mb-2 my-5">
+                <MDBCol className="d-flex justify-content-center mb-2 my-5">
                   <MDBCardText>Admin Functions</MDBCardText>
                 </MDBCol>
                 <MDBCardBody>
-                  
                   <MDBRow>
-                    
-                    <MDBCol sm="3">
-                      
-                      <MDBCardText>Articles</MDBCardText>
+                    <MDBCol>
+                      <MDBCardText>Articles List</MDBCardText>
+                      <hr />
                       {/*Articles List */}
+                      <TableContainer component={Paper}>
+                        <Table
+                          sx={{ minWidth: 650 }}
+                          size="small"
+                          aria-label="a dense table"
+                        >
+                          <TableHead>
+                            <TableRow>
+                              <TableCell>Article Name</TableCell>
+                              <TableCell align="right">ID</TableCell>
+                              <TableCell align="right">{/*Delete Button Display */}</TableCell>
+                            </TableRow>
+                          </TableHead>
+                          <TableBody>
+                            {rows.map((row) => (
+                              <TableRow
+                                key={row.name}
+                                sx={{
+                                  "&:last-child td, &:last-child th": {
+                                    border: 0,
+                                  },
+                                }}
+                              >
+                                <TableCell component="th" scope="row">
+                                  {row.name}
+                                </TableCell>
+                                <TableCell align="right">
+                                  {row.id}
+                                </TableCell>
+                                <TableCell align="right">
+                                  <button
+                                    className="delete-btn ms-1 my-3"
+                                  ><DeleteIcon/> Delete</button>
+                                    
+                                </TableCell>
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
+                      </TableContainer>
                     </MDBCol>
 
-                    <hr className="py-4" />
                     <div className="d-flex justify-content-end mb-2">
-                    <MDBBtn outline className="ms-1 my-3"
-                    style={{border: "#8B4513 2px solid" , color:"#8B4513"}}>
-                      Create New
-                    </MDBBtn>
-                    <MDBBtn outline className="ms-1 my-3"
-                    style={{border: "red 2px solid" , color:"red"}}>
-                      Delete
-                    </MDBBtn>
-                  </div>
+                      <Link to={"/create-article"}>
+                        <button
+                          type="button"
+                          onClick={() => setShowModal(true)}
+                          className="create-new-btn ms-1 my-3 "
+                        ><AddIcon />
+                          Create New
+                        </button>
+                      </Link>
+                    </div>
                   </MDBRow>
                   <MDBRow>
                     <MDBCol sm="3">
-                      <MDBCardText>Viseos</MDBCardText>
+                      <MDBCardText>Videos List</MDBCardText>
                       {/*Videos List */}
                     </MDBCol>
-                    <hr className="py-4" />
-                    <div className="d-flex justify-content-end mb-2">
-                    <MDBBtn outline className="ms-1 my-3"
-                    style={{border: "#8B4513 2px solid" , color:"#8B4513"}}>
-                      Create New
-                    </MDBBtn>
-                    <MDBBtn outline className="ms-1 my-3"
-                    style={{border: "red 2px solid" , color:"red"}}>
-                      Delete
-                    </MDBBtn>
-                  </div>
-                  </MDBRow>
+                    <hr />
+                    <TableContainer component={Paper}>
+                        <Table
+                          sx={{ minWidth: 650 }}
+                          size="small"
+                          aria-label="a dense table"
+                        >
+                          <TableHead>
+                            <TableRow>
+                              <TableCell>Video Name</TableCell>
+                              <TableCell align="right">ID</TableCell>
+                              <TableCell align="right">{/*Delete Button Display */}</TableCell>
+                            </TableRow>
+                          </TableHead>
+                          <TableBody>
+                            {rows.map((row) => (
+                              <TableRow
+                                key={row.name}
+                                sx={{
+                                  "&:last-child td, &:last-child th": {
+                                    border: 0,
+                                  },
+                                }}
+                              >
+                                <TableCell component="th" scope="row">
+                                  {row.name}
+                                </TableCell>
+                                <TableCell align="right">
+                                  {row.id}
+                                </TableCell>
+                                <TableCell align="right">
+                                  <button
+                                    className="delete-btn ms-1 my-3"
+                                  ><DeleteIcon/> Delete</button>
+                                    
+                                </TableCell>
+                              </TableRow>
+                            ))}
+                          </TableBody>
+                        </Table>
+                      </TableContainer>
+                      <div className="d-flex justify-content-end mb-2">
+                      <Link to={"/create-article"}>
+                        <button
+                          type="button"
+                          onClick={() => setShowModal(true)}
+                          className="create-new-btn ms-1 my-3 "
+                        ><AddIcon />
+                          Create New
+                        </button>
+                      </Link>
+                    </div>
+                    </MDBRow>
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
