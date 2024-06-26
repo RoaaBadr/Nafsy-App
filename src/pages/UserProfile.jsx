@@ -1,5 +1,7 @@
 import React from "react";
 import Navbar from "../sections/Navbar";
+import InfoIcon from '@mui/icons-material/Info';
+import { Link } from "react-router-dom";
 import {
   MDBCol,
   MDBContainer,
@@ -15,14 +17,17 @@ export default function UserProfile() {
   return (
     <>
       <Navbar />
-      <section style={{ backgroundColor: "#eee" }}>
+      <section className="boarder">
         <MDBContainer className="py-5">
           <MDBRow>
             <MDBCol lg="4">
               <MDBCard className="mb-4">
+              <MDBCol className="d-flex justify-content-center mb-2 my-5">
+                  <MDBCardText>Profile Image</MDBCardText>
+                </MDBCol>
                 <MDBCardBody className="text-center">
                   <MDBCardImage
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                    src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"
                     alt="avatar"
                     className="rounded-circle border"
                     style={{ width: "150px" }}
@@ -82,6 +87,16 @@ export default function UserProfile() {
                       </MDBCardText>
                     </MDBCol>
                   </MDBRow>
+                  <div className="d-flex justify-content-end mb-2">
+                      <Link to={"/info-update"}>
+                        <button
+                          type="button"
+                          className="create-new-btn ms-1 my-3 "
+                        ><InfoIcon className="mx-2"/>
+                          Update Information
+                        </button>
+                      </Link>
+                    </div>
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>

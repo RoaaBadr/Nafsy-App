@@ -9,6 +9,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import AddIcon from '@mui/icons-material/Add';
+import InfoIcon from '@mui/icons-material/Info';
 import DeleteIcon from '@mui/icons-material/Delete';
 import {
   MDBCol,
@@ -108,7 +109,18 @@ export default function AdminProfile() {
                       </MDBCardText>
                     </MDBCol>
                   </MDBRow>
+                  <div className="d-flex justify-content-end mb-2">
+                      <Link to={"/info-update"}>
+                        <button
+                          type="button"
+                          className="create-new-btn ms-1 my-3 "
+                        ><InfoIcon className="mx-2"/>
+                          Update Information
+                        </button>
+                      </Link>
+                    </div>
                 </MDBCardBody>
+                
               </MDBCard>
               <MDBCard className="mb-4">
                 <MDBCol className="d-flex justify-content-center mb-2 my-5">

@@ -21,6 +21,10 @@ import CreateVideo from "./pages/CreateVideo.jsx";
 import { Signup } from "./components/Signup.jsx";
 import { Login } from "./components/Login.jsx";
 
+
+import InfoUpdate from "./pages/InfoUpdate.jsx";
+import ForgetPass from "./pages/ForgetPass.jsx";
+
 function App() {
   const handleStep1Submit = (values) => {
     // Handle step 1 form submission logic here
@@ -45,6 +49,9 @@ function App() {
 
           <Route path="/admin-profile" element={<Admin />} />
           <Route path="/user-profile" element={<User />} />
+
+          <Route path="/info-update" element={<InfoUpdate />} />
+          <Route path="/reset-password" element={<ForgetPass />} />
         </Routes>
       </HashRouter>
     </div>

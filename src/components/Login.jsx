@@ -122,10 +122,11 @@ export const Login = () => {
                               component="div"
                               className="error"
                             />
-
+                            <Link to={"/reset-password"}>
                             <Components.Anchor >
                               Forget the password?
                             </Components.Anchor>
+                            </Link>
                           </div>
 
                           {error && <div className="error">{error}</div>}
